@@ -12,6 +12,10 @@ analyzer:
   plugins:
     - custom_lint
 
+custom_lint:
+  rules:
+    - missing_provider_scope
+
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`

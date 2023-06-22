@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final helloWorldProvider = Provider((_) => 'Hello world');
+import 'feature/simple_provider/todos/presentation/todo_list_screen.dart';
+
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends HookConsumerWidget {
@@ -11,20 +16,8 @@ class MyApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final String value = ref.watch(helloWorldProvider);
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Example'),
-        ),
-        body: Center(
-          child: Text(value),
-        ),
-      ),
+    return const MaterialApp(
+      home: TodoListScreen(),
     );
   }
 }
